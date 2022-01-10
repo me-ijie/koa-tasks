@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" name="referrer" content="never">
+  <!-- import CSS -->
+  <title>TODO</title>
+</head>
+
+<body>
+  <div class="register">
+    <div class="item">
+      <label for="name">昵称：</label>
+      <input id="name" type="text"></input>     
+    </div>
+    <div class="item">
+      <label for="mobile">手机号：</label>
+      <input name="mobile" id="mobile" type="number"></input>     
+    </div>
+    <div class="item">
+      <label for="pwd">密码：</label>
+      <input name="pwd" id="pwd" type="password"></input>     
+    </div>
+
+    <button type='submit' class="registerBtn">注册</button>
+    <button type='submit' class="loginBtn">登录</button>
+  </div>
+
+
+</body>
+<script>
+  window.onload = function () {
+
+    const getInfo = () => {
+      let request = new XMLHttpRequest()
+      let url = "http://localhost:7001/"
+      request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+          let res = request.responseText
+          console.log(res)
+        }
+      }
+      request.open("GET", url, true)
+      request.send()
+    }
+
+    const request = (method, api, data) => {
+      let request = new XMLHttpRequest()
+      let url = "http://localhost:7001/api/" + api
+      request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+          let res = JSON.parse(request.responseText)
+          if (res.code !== 200) window.alert(res && res.message || '请求错误')
+          console.log(res.data)
+        }
+        if (request.readyState == 4 && request.status !== 200) {
+          let res = request.responseText
+          window.alert(res && res.message || '请求错误')
+        }
+      }
+      request.open(method, url, true)
+      request.setRequestHeader("Content-Type", "application/json")
+      let query = JSON.stringify(data)
+      request.send(query)
+    }
+
+    let registerBtn = document.getElementsByClassName('registerBtn')[0]
+    registerBtn.onclick = () => {
+      let name = document.getElementById('name').value
+      let mobile = document.getElementById('mobile').value
+      let pwd = document.getElementById('pwd').value
+      let data = {
+        name,
+        mobile,
+        pwd
+      }
+      request('POST', 'user', data)
+    }
+    let loginBtn = document.getElementsByClassName('loginBtn')[0]
+    loginBtn.onclick = () => {
+      let name = document.getElementById('name').value
+      let mobile = document.getElementById('mobile').value
+      let pwd = document.getElementById('pwd').value
+      let data = {
+        name,
+        mobile,
+        pwd
+      }
+      request('POST', 'login', data)
+    }
+    getInfo()
+  }
+</script>
+
+</html>
