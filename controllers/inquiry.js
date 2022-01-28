@@ -4,8 +4,8 @@ const SECRET       = 'todotasks';
 
 // TODO 了解session, cookies 和jwt. session和cookies是不分家的, 一般session是存在服务端的信息, cookies是存在客户端的信息. jwt也会和他们搭配使用用于单点登录和csrf防护
 
-const regist = async (ctx, next) => {
-  let { username, mobile, password } = ctx.request.body;
+const create = async (ctx, next) => {
+  let inquiry = ctx.request.body;
   try {
     // TODO 新加手机号字段
     // TODO 手机号，名称要唯一，不唯一抛错 
@@ -32,7 +32,7 @@ const regist = async (ctx, next) => {
   }
 }
 
-const login = async (ctx, next) => {
+const get = async (ctx, next) => {
   try {
     let { mobile, password } = ctx.request.body;
     // 手机号登录
@@ -58,12 +58,12 @@ const login = async (ctx, next) => {
   }
 }
 
-const info = async (ctx, next) => {
+const user = async (ctx, next) => {
   try {
     const token = ctx.cookies.get('user')
     const user = jsonwebtoken.verify(token, SECRET)
     if (!user || !user.id) return ctx.body = ctx.errCode['PARAMS_ERROR']
-    const [rows, fields] = await ctx.db.query('SELECT * FROM users WHERE id = ? LIMIT 1', [user.id])
+    let [rows, fields] = await ctx.db.query('SELECT * FROM users WHERE id = ? LIMIT 1', [user.id])
     if (!rows.length) {
       ctx.response.status = 200;
       return ctx.body = {
@@ -71,7 +71,8 @@ const info = async (ctx, next) => {
         msg: '获取用户信息失败'
       }
     }
-    return ctx.Back({ code: 0, message: '' }, { username: rows[0].username, mobile: rows[0].mobile });
+    [rows, fields] = await ctx.db.query('SELECT * FROM inquiry WHERE user_id = ?', [user.id])
+    return ctx.Back({ code: 0, message: '' }, rows);
   } catch (error) {
     ctx.Throw(403, error.message);
     ctx.Back(error.message, ctx.ErrCode.DATABASE_ERROR);
@@ -79,7 +80,7 @@ const info = async (ctx, next) => {
 }
 
   // TODO 根据用户id修改用户信息
-  const update = async (ctx, next) => {
+  const recall = async (ctx, next) => {
     try {
       let { username, mobile, password, id } = ctx.request.body;
       const [rows, fields] = await ctx.db.query('UPDATE Users SET (username, mobile, password) WHERE id = ?', [username, mobile, password, id])
@@ -95,7 +96,7 @@ const info = async (ctx, next) => {
   }
 
   // TODO 删除用户
-  const delUser = async (ctx, next) => {
+  const urge = async (ctx, next) => {
     try {
       let { id } = ctx.request.body;
       const [rows, fields] = await ctx.db.query('DELETE FROM Users WHERE id = ?', [id])
@@ -110,9 +111,9 @@ const info = async (ctx, next) => {
   }
 
 module.exports = {
-  regist,
-  login,
-  info,
-  update,
-  delUser
+  create,
+  get,
+  user,
+  recall,
+  urge
 }
