@@ -1,5 +1,5 @@
 const { regist, login, info, delUser, update } = require('../controllers/user')
-const { create, get, user, recall, urge } = require('../controllers/inquiry')
+const { add, get, user, recall, urge } = require('../controllers/inquiry')
 
 const router = require('koa-router')()
 const routerPrefix = '/api'
@@ -17,7 +17,7 @@ router.post(`${routerPrefix}/user/del`, delUser)
 router.post(`${routerPrefix}/user/update`, update)
 
 // 询价模块
-router.post(`${routerPrefix}/inquiry/create`, create)
+router.post(`${routerPrefix}/inquiry/add`, add)
 router.get(`${routerPrefix}/inquiry/get`, get)
 router.get(`${routerPrefix}/inquiry/user`, user)
 router.post(`${routerPrefix}/inquiry/recall`, recall)

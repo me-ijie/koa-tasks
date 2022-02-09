@@ -1,4 +1,3 @@
-const { json }     = require('body-parser');
 const jsonwebtoken = require('jsonwebtoken');
 const SECRET       = 'todotasks';
 

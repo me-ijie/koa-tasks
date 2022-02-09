@@ -1,35 +1,35 @@
-const { json }     = require('body-parser');
 const jsonwebtoken = require('jsonwebtoken');
 const SECRET       = 'todotasks';
+const { insertData } = require('../lib/utils')
 
 // TODO 了解session, cookies 和jwt. session和cookies是不分家的, 一般session是存在服务端的信息, cookies是存在客户端的信息. jwt也会和他们搭配使用用于单点登录和csrf防护
 
-const create = async (ctx, next) => {
-  let inquiry = ctx.request.body;
+const add = async (ctx, next) => {
   try {
-    // TODO 新加手机号字段
-    // TODO 手机号，名称要唯一，不唯一抛错 
-    let code = 0
-    let message = ''
-    let data = []
-    let [rows, fields] = await ctx.db.query(`SELECT username FROM users WHERE username = ? LIMIT 1`, [username])
-    if (rows.length && rows[0].username) {
-      code = 40001
-      message = '注册失败，昵称已存在'
-      return ctx.Back({ code, message });
+    console.log('body', ctx.request.body)
+    const inquiry = JSON.parse(ctx.request.body.data);
+    const token = ctx.cookies.get('user')
+    const user = jsonwebtoken.verify(token, SECRET)
+    if (!user || !user.id) return ctx.body = ctx.errCode['PARAMS_ERROR']
+    let [rows, fields] = await ctx.db.query('SELECT * FROM users WHERE id = ? LIMIT 1', [user.id])
+    if (!rows.length) {
+      ctx.response.status = 200;
+      return ctx.body = {
+        code: 400001,
+        msg: '获取用户信息失败'
+      }
     }
-    [rows, fields] = await ctx.db.query(`SELECT mobile FROM users WHERE mobile = ? LIMIT 1`, [mobile])
-    if (rows.length && rows[0].mobile) {
-      code = 40001
-      message = '该手机号已被注册'
-      return ctx.Back({ code, message });
-    }
-    [rows, fields] = await ctx.db.execute('INSERT INTO users (username, password, mobile) VALUES(?,?,?)', [username, password, mobile])
-    if (rows && rows.insertId) return ctx.Back({ code, message }, rows.insertId);
+    inquiry.user_id = user.id
+    console.log('inquiry', inquiry)
+    rows = await insertData(ctx, 'inquiry', inquiry)
+    if (rows && rows.insertId) return ctx.Back({ code: 0, message: '' }, rows.insertId);
+    return ctx.Back({ code: 0, message: '' }, rows);
   } catch (error) {
     ctx.Throw(403, error.message);
     ctx.Back(error.message, ctx.ErrCode.DATABASE_ERROR);
   }
+
+
 }
 
 const get = async (ctx, next) => {
@@ -111,7 +111,7 @@ const user = async (ctx, next) => {
   }
 
 module.exports = {
-  create,
+  add,
   get,
   user,
   recall,
