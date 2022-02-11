@@ -20,6 +20,8 @@ const add = async (ctx, next) => {
       }
     }
     inquiry.user_id = user.id
+    const now = new Date()
+    inquiry.add_time = now
     console.log('inquiry', inquiry)
     rows = await insertData(ctx, 'inquiry', inquiry)
     if (rows && rows.insertId) return ctx.Back({ code: 0, message: '' }, rows.insertId);
