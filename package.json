@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "pm2 start pm2.config.js --env prd",
+    "stop": "pm2 stop koa_tasks & pm2 delete koa_tasks"
   },
   "author": "",
   "license": "ISC",

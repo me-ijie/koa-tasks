@@ -1,0 +1,104 @@
+2022-02-26 20:08:44: Sat, 26 Feb 2022 12:08:44 GMT koa deprecated Support for generators will be removed in v3. See the documentation for examples of how to convert old middleware https://github.com/koajs/koa/blob/master/docs/migration.md at app.js:13:5
+2022-02-26 20:08:44: Sat, 26 Feb 2022 12:08:44 GMT koa deprecated Support for generators will be removed in v3. See the documentation for examples of how to convert old middleware https://github.com/koajs/koa/blob/master/docs/migration.md at app.js:13:5
+2022-02-26 20:08:44: Sat, 26 Feb 2022 12:08:44 GMT koa deprecated Support for generators will be removed in v3. See the documentation for examples of how to convert old middleware https://github.com/koajs/koa/blob/master/docs/migration.md at app.js:13:5
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error: Access denied for user 'root'@'172.18.0.1' (using password: YES)
+    at PromisePool.query (/work/node/koa-tasks/node_modules/mysql2/promise.js:341:22)
+    at module.exports (/work/node/koa-tasks/lib/mysql.js:11:21)
+    at Object.<anonymous> (/work/node/koa-tasks/app.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at /home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/lib/ProcessContainer.js:303:25
+    at wrapper (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/internal/once.js:12:16)
+    at next (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/waterfall.js:96:20)
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error: Access denied for user 'root'@'172.18.0.1' (using password: YES)
+    at PromisePool.query (/work/node/koa-tasks/node_modules/mysql2/promise.js:341:22)
+    at module.exports (/work/node/koa-tasks/lib/mysql.js:11:21)
+    at Object.<anonymous> (/work/node/koa-tasks/app.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at /home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/lib/ProcessContainer.js:303:25
+    at wrapper (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/internal/once.js:12:16)
+    at next (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/waterfall.js:96:20)
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error: Access denied for user 'root'@'172.18.0.1' (using password: YES)
+    at PromisePool.query (/work/node/koa-tasks/node_modules/mysql2/promise.js:341:22)
+    at module.exports (/work/node/koa-tasks/lib/mysql.js:11:21)
+    at Object.<anonymous> (/work/node/koa-tasks/app.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at /home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/lib/ProcessContainer.js:303:25
+    at wrapper (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/internal/once.js:12:16)
+    at next (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/waterfall.js:96:20)
+2022-02-26 20:08:44: Sat, 26 Feb 2022 12:08:44 GMT koa deprecated Support for generators will be removed in v3. See the documentation for examples of how to convert old middleware https://github.com/koajs/koa/blob/master/docs/migration.md at app.js:13:5
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error: Access denied for user 'root'@'172.18.0.1' (using password: YES)
+    at PromisePool.query (/work/node/koa-tasks/node_modules/mysql2/promise.js:341:22)
+    at module.exports (/work/node/koa-tasks/lib/mysql.js:11:21)
+    at Object.<anonymous> (/work/node/koa-tasks/app.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at /home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/lib/ProcessContainer.js:303:25
+    at wrapper (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/internal/once.js:12:16)
+    at next (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/waterfall.js:96:20)
+2022-02-26 20:31:46: Sat, 26 Feb 2022 12:31:46 GMT koa deprecated Support for generators will be removed in v3. See the documentation for examples of how to convert old middleware https://github.com/koajs/koa/blob/master/docs/migration.md at app.js:13:5
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error: Access denied for user 'root'@'172.18.0.1' (using password: YES)
+    at PromisePool.query (/work/node/koa-tasks/node_modules/mysql2/promise.js:341:22)
+    at module.exports (/work/node/koa-tasks/lib/mysql.js:11:21)
+    at Object.<anonymous> (/work/node/koa-tasks/app.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at /home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/lib/ProcessContainer.js:303:25
+    at wrapper (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/internal/once.js:12:16)
+    at next (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/waterfall.js:96:20)
+2022-02-26 20:31:46: Sat, 26 Feb 2022 12:31:46 GMT koa deprecated Support for generators will be removed in v3. See the documentation for examples of how to convert old middleware https://github.com/koajs/koa/blob/master/docs/migration.md at app.js:13:5
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error: Access denied for user 'root'@'172.18.0.1' (using password: YES)
+    at PromisePool.query (/work/node/koa-tasks/node_modules/mysql2/promise.js:341:22)
+    at module.exports (/work/node/koa-tasks/lib/mysql.js:11:21)
+    at Object.<anonymous> (/work/node/koa-tasks/app.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at /home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/lib/ProcessContainer.js:303:25
+    at wrapper (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/internal/once.js:12:16)
+    at next (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/waterfall.js:96:20)
+2022-02-26 20:31:46: Sat, 26 Feb 2022 12:31:46 GMT koa deprecated Support for generators will be removed in v3. See the documentation for examples of how to convert old middleware https://github.com/koajs/koa/blob/master/docs/migration.md at app.js:13:5
+2022-02-26 20:31:46: Sat, 26 Feb 2022 12:31:46 GMT koa deprecated Support for generators will be removed in v3. See the documentation for examples of how to convert old middleware https://github.com/koajs/koa/blob/master/docs/migration.md at app.js:13:5
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error: Access denied for user 'root'@'172.18.0.1' (using password: YES)
+    at PromisePool.query (/work/node/koa-tasks/node_modules/mysql2/promise.js:341:22)
+    at module.exports (/work/node/koa-tasks/lib/mysql.js:11:21)
+    at Object.<anonymous> (/work/node/koa-tasks/app.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at /home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/lib/ProcessContainer.js:303:25
+    at wrapper (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/internal/once.js:12:16)
+    at next (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/waterfall.js:96:20)
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error: Access denied for user 'root'@'172.18.0.1' (using password: YES)
+    at PromisePool.query (/work/node/koa-tasks/node_modules/mysql2/promise.js:341:22)
+    at module.exports (/work/node/koa-tasks/lib/mysql.js:11:21)
+    at Object.<anonymous> (/work/node/koa-tasks/app.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at /home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/lib/ProcessContainer.js:303:25
+    at wrapper (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/internal/once.js:12:16)
+    at next (/home/tang/.nvm/versions/node/v12.18.1/lib/node_modules/pm2/node_modules/async/waterfall.js:96:20)
